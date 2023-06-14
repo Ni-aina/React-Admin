@@ -2,7 +2,7 @@ import { Box } from "@mui/material"
 
 const Dashboard = ()=> {
     return(
-        <Box>Dashboard</Box>
+        <Box></Box>
     );
 } 
 
