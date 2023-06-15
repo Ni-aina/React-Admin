@@ -190,13 +190,6 @@ const Sidebar = ()=> {
                             selected={selected}
                             setSelected={setSelected}
                         />
-                        <Item
-                            title="Bar Chart"
-                            to="/bar"
-                            icon={<BarChartOutlined />}
-                            selected={selected}
-                            setSelected={setSelected}
-                        />
                          <Typography
                             variant="h6"
                             color={colors.grey[300]}
@@ -204,6 +197,13 @@ const Sidebar = ()=> {
                         >
                             Charts
                         </Typography>
+                        <Item
+                            title="Bar Chart"
+                            to="/bar"
+                            icon={<BarChartOutlined />}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
                         <Item
                             title="Pie Chart"
                             to="/pie"
