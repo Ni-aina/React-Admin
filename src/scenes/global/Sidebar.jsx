@@ -12,7 +12,7 @@ import {
     ReceiptOutlined,
     PersonOutlined,
     CalendarTodayOutlined,
-    HelpOutlineOutlined,
+    // HelpOutlineOutlined,
     BarChartOutlined,
     PieChartOutlineOutlined,
     TimelineOutlined,
@@ -20,6 +20,26 @@ import {
     MapOutlined
  } 
  from "@mui/icons-material";
+
+const Item = ({ title, to , icon, selected, setSelected }) => {
+    const theme = useTheme();
+    const colors = tokens(theme.palette.mode);
+    return(
+        <MenuItem 
+            active={ selected === title }
+            style={{
+                color: colors.grey[100]
+            }}
+            onClick={()=> setSelected(title)}
+            icon={icon}
+        >
+            <Typography>
+                {title}
+            </Typography>
+            <Link to={to}/>
+        </MenuItem>
+    );
+}
 
 const Sidebar = ()=> {
     const theme = useTheme();
@@ -81,8 +101,8 @@ const Sidebar = ()=> {
                             <Box display="flex" justifyContent="center" alignItems="center">
                                 <img 
                                     alt="profile-user" 
-                                    width="100px"
-                                    height="100px"
+                                    width="80px"
+                                    height="80px"
                                     src={`${process.env.PUBLIC_URL}/assets/user.jpg`} 
                                     style={{ cursor: "pointer", borderRadius: "50%"}}
                                 />
@@ -105,6 +125,107 @@ const Sidebar = ()=> {
                             </Box>
                         </Box>
                     )}
+                    {/* MENU ITEMS */}
+                    <Box paddingLeft={isCollapsed ? undefined : "10%"}>
+                        <Item
+                            title="Dashboard"
+                            to="/"
+                            icon={<HomeOutlined />}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Typography
+                            variant="h6"
+                            color={colors.grey[300]}
+                            sx={{ m: "15px 0 5x 20px" }}
+                        >
+                            Data
+                        </Typography>
+                        <Item
+                            title="Manage Team"
+                            to="/team"
+                            icon={<PeopleOutlined />}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Item
+                            title="Contacts"
+                            to="/contacts"
+                            icon={<ContactsOutlined />}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Item
+                            title="Invoices Balances"
+                            to="/invoices"
+                            icon={<ReceiptOutlined />}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                         <Typography
+                            variant="h6"
+                            color={colors.grey[300]}
+                            sx={{ m: "15px 0 5x 20px" }}
+                        >
+                            Pages
+                        </Typography>
+                        <Item
+                            title="Profil Form"
+                            to="/form"
+                            icon={<PersonOutlined />}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Item
+                            title="Calendar"
+                            to="/calendar"
+                            icon={<CalendarTodayOutlined />}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Item
+                            title="FAQ Page"
+                            to="/faq"
+                            icon={<HomeOutlined />}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Item
+                            title="Bar Chart"
+                            to="/bar"
+                            icon={<BarChartOutlined />}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                         <Typography
+                            variant="h6"
+                            color={colors.grey[300]}
+                            sx={{ m: "15px 0 5x 20px" }}
+                        >
+                            Charts
+                        </Typography>
+                        <Item
+                            title="Pie Chart"
+                            to="/pie"
+                            icon={<PieChartOutlineOutlined />}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Item
+                            title="Line Chart"
+                            to="/line"
+                            icon={<TimelineOutlined />}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                        <Item
+                            title="Geography Chart"
+                            to="/geography"
+                            icon={<MapOutlined />}
+                            selected={selected}
+                            setSelected={setSelected}
+                        />
+                    </Box>
                 </Menu>
             </ProSidebar>
         </Box>
