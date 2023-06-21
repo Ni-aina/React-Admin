@@ -12,7 +12,6 @@ import {
     ReceiptOutlined,
     PersonOutlined,
     CalendarTodayOutlined,
-    // HelpOutlineOutlined,
     BarChartOutlined,
     PieChartOutlineOutlined,
     TimelineOutlined,
@@ -101,8 +100,8 @@ const Sidebar = ()=> {
                             <Box display="flex" justifyContent="center" alignItems="center">
                                 <img 
                                     alt="profile-user" 
-                                    width="80px"
-                                    height="80px"
+                                    width="100px"
+                                    height="100px"
                                     src={`${process.env.PUBLIC_URL}/assets/user.jpg`} 
                                     style={{ cursor: "pointer", borderRadius: "50%"}}
                                 />
